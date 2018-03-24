@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-public class source {
+public class code_source {
 
 	public static void main(String[] args) {
 		
@@ -8,11 +8,7 @@ public class source {
 		Scanner sc = new Scanner(System.in); 
 		
 		char nouvelleConversion = 'O';
-		
-		double celsiusEntres = (0);
-		double celsiusToFahrenheit;
-		celsiusToFahrenheit = ((9/5) * celsiusEntres) +32;
-		
+				
 		
 		// On lance le début de l'application avec une question permettant de personnaliser l'expérience
 		System.out.println("Bienvenue au convertisseur ! \nVeuillez entrer votre nom");
@@ -22,13 +18,21 @@ public class source {
 		
 		
 		// On met en place la boucle qui permet de revenir à une nouvelle conversion si l'utilisateur le souhaite
-		while (nouvelleConversion == 'O'){
+		while (nouvelleConversion == 'O' || nouvelleConversion == 'o'){
 			
 			
-			System.out.println("Ok " + prenom + " quelle conversion voulez vous effectuer ?\n\t-1 Convertir des degrés Celsius en degrés Fahrenheit\n\t-2 Convertir des degrés Fahrenheit en degrés Celsius \nEntrez le nombre correspondant. ");
+			System.out.println("Ok " + prenom + " quelle conversion voulez vous effectuer ?");
+			System.out.println("\t-1 Convertir des degrés Celsius en degrés Fahrenheit");
+			System.out.println("\t-2 Convertir des degrés Fahrenheit en degrés Celsius \n \n \tEntrez le chiffre correspondant. ");
 			
 			// On récupère la demande de conversion avec un sc.nextInt
 			int reponse1 = sc.nextInt();
+			
+			while (reponse1 != 1 && reponse1 != 2) {
+				System.out.println("Je n'ai pas compris votre demande, veuillez entrer le chiffre correspondant :");
+				System.out.println("\t-1 Convertir des degrés Celsius en degrés Fahrenheit\n\t-2 Convertir des degrés Fahrenheit en degrés Celsius");
+				reponse1 = sc.nextInt();
+			}
 			
 			//on créé la première condition Celsius vers Fahrenheit
 			if (reponse1 <= 1) {
